@@ -9,7 +9,7 @@
 输入一个已完成树枝分类的结果（如层级标签、空间结构等），系统自动分析枝条的空间姿态、生长方向和竞争关系，识别出以下三类待剪枝：
 
 * 🟥 **背上枝**（Dorsal branches）
-* 🟩 **内膛枝/向心枝**（Centripetal branches）
+* 🟩 **向心枝**（Centripetal branches）
 * 🟦 **竞争枝**（Competitive branches）
 
 并输出这些枝条的空间位置与属性信息，供人工或机器人修剪使用。
