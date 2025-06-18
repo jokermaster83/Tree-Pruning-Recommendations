@@ -1,0 +1,15 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Compute normals for point sets">
+  <Param description="Neighbour num" tooltip="The number of neighbors used to estimate normals." type="RichInt" name="K" value="10"/>
+  <Param description="Smooth Iteration" tooltip="The number of smoothing iteration done on the p used to estimate and propagate normals." type="RichInt" name="smoothIter" value="0"/>
+  <Param description="Flip normals w.r.t. viewpoint" tooltip="If the 'viewpoint' (i.e. scanner position) is known, it can be used to disambiguate normals orientation, so that all the normals will be oriented in the same direction." type="RichBool" name="flipFlag" value="false"/>
+  <Param description="Viewpoint Pos." tooltip="The viewpoint position can be set by hand (i.e. getting the current viewpoint) or it can be retrieved from mesh camera, if the viewpoint position is stored there." type="RichPosition" name="viewPos" x="0" y="0" z="0"/>
+ </filter>
+ <filter name="Surface Reconstruction: Ball Pivoting">
+  <Param description="Pivoting Ball radius (0 autoguess)" tooltip="The radius of the ball pivoting (rolling) over the set of points. Gaps that are larger than the ball radius will not be filled; similarly the small pits that are smaller than the ball radius will be filled." type="RichAbsPerc" name="BallRadius" value="0.054944" max="5.49435" min="0"/>
+  <Param description="Clustering radius (% of ball radius)" tooltip="To avoid the creation of too small triangles, if a vertex is found too close to a previous one, it is clustered/merged with it." type="RichFloat" name="Clustering" value="20"/>
+  <Param description="Angle Threshold (degrees)" tooltip="If we encounter a crease angle that is too large we should stop the ball rolling" type="RichFloat" name="CreaseThr" value="90"/>
+  <Param description="Delete initial set of faces" tooltip="if true all the initial faces of the mesh are deleted and the whole surface is rebuilt from scratch. Otherwise the current faces are used as a starting point. Useful if you run the algorithm multiple times with an increasing ball radius." type="RichBool" name="DeleteFaces" value="false"/>
+ </filter>
+</FilterScript>
